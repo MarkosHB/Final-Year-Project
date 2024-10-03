@@ -1,0 +1,27 @@
+# Datos generales.
+logging="INFO"
+network-id=1337
+identity="nodo_verificador"
+node-private-key-file="/nodo3/key"
+
+# Archivos de configuración.
+data-path="/var/lib/besu"
+genesis-file="/genesis.json"
+
+# Conexiones de la red.
+nat-method=["DOCKER"]
+host-allowlist=["*"]
+bootnodes=["enode://09b02f8a5fddd222ade4ea4528faefc399623af3f736be3c44f03e2df22fb792f3931a4d9573d333ca74343305762a753388c3422a86d98b713fc91c1ea04842@172.20.0.10:30303"]
+
+# Activar el minado de bloques.
+miner-enabled=true
+miner-coinbase="0xf17f52151EbEF6C7334FAD080c5704D77216b732"
+
+# Configurar las comunicaciones.
+p2p-host="0.0.0.0"
+p2p-port=30305
+rpc-http-enabled=true
+rpc-http-host="0.0.0.0"
+rpc-http-port=8547
+rpc-http-api=["ADMIN", "CLIQUE","ETH","NET", "TXPOOL", "WEB3"]
+rpc-http-cors-origins=["*"]

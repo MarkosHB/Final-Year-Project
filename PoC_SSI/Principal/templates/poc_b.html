@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Prueba de Concepto B</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='pasos.js') }}" defer></script>
+</head>
+
+<body>
+    <div class="contenedor">
+
+       <div id="consola" class="contenedor-mensaje">ESPERANDO INTERACCIÓN</div>
+
+        <div class="contenedor-paso">
+            <button class="boton-general" poc="b" numero-paso="1">Efectuar paso 1</button>
+            <h3>El Titular pide al Emisor que genere una credencial verificable para poder ser identificado.</h3>
+        </div>
+        <div class="contenedor-paso">
+            <button class="boton-general" poc="b" numero-paso="2">Efectuar paso 2</button>
+            <h3>El Titular realiza una petición de acceso al Registro, el cual genera su token.</h3>
+        </div>
+        <div class="contenedor-paso">
+            <button class="boton-general" poc="b" numero-paso="3">Efectuar paso 3</button>
+            <h3>El Titular utiliza su token para autenticarse directamente en el Servicio.</h3>
+        </div>
+
+        <form method="get" action="/">
+            <button type="submit" class="boton-atras">Volver al Inicio</button>
+        </form>
+    </div>
+</body>
+
+</html>

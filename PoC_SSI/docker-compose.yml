@@ -1,0 +1,124 @@
+version: '3.8'
+services:
+
+# Actor 0.
+  main:
+    build: Principal/
+    container_name: main
+    ports:
+      - "5000:5000"
+    networks:
+      - red_local
+
+# Actor 1.
+  emisor:
+    build: Actores/Emisor
+    container_name: emisor
+    ports:
+      - "5001:5001"
+    networks:
+      - red_local
+
+# Actor 2.
+  titular:
+    build: Actores/Titular
+    container_name: titular
+    ports:
+      - "5002:5002"
+    networks:
+      - red_local
+
+# Actor 3.
+  verificador:
+    build: Actores/Verificador
+    container_name: verificador
+    ports:
+      - "5003:5003"
+    networks:
+      - red_local
+
+# Actor 4.
+  registro:
+    build: Actores/Registro
+    container_name: registro
+    ports:
+      - "5004:5004"
+    networks:
+      - red_local
+
+# Actor 5.
+  servicio:
+    build: Actores/Servicio
+    container_name: servicio
+    ports:
+      - "5005:5005"
+    networks:
+      - red_local
+
+# Blockchain.
+  nodo_principal:
+    image: hyperledger/besu:latest
+    container_name: nodo_principal
+    user: root
+    ports:
+      - "30303:30303"
+      - "8545:8545"
+    volumes:
+      - besu_principal:/var/lib/besu
+      - ./Blockchain/nodo1/:/nodo1
+      - ./Blockchain/genesis.json:/genesis.json
+    command:
+      - --config-file=/nodo1/besu-config.toml
+      - --data-path=/var/lib/besu
+    networks:
+      red_local:
+        ipv4_address: 172.20.0.10
+
+  nodo_emisor:
+    image: hyperledger/besu:latest
+    container_name: nodo_emisor
+    user: root
+    ports:
+      - "30304:30304"
+      - "8546:8546"
+    volumes:
+      - besu_emisor:/var/lib/besu
+      - ./Blockchain/nodo2/:/nodo2
+      - ./Blockchain/genesis.json:/genesis.json
+    command:
+      - --config-file=/nodo2/emisor-config.toml
+      - --data-path=/var/lib/besu
+    networks:
+      red_local:
+        ipv4_address: 172.20.0.11
+
+  nodo_verificador:
+    image: hyperledger/besu:latest
+    container_name: nodo_verificador
+    user: root
+    ports:
+      - "30305:30305"
+      - "8547:8547"
+    volumes:
+      - besu_verificador:/var/lib/besu
+      - ./Blockchain/nodo3:/nodo3
+      - ./Blockchain/genesis.json:/genesis.json
+    command:
+      - --config-file=/nodo3/verificador-config.toml
+      - --data-path=/var/lib/besu
+    networks:
+      red_local:
+        ipv4_address: 172.20.0.12
+
+volumes:
+  besu_principal: {}
+  besu_emisor: {}
+  besu_verificador: {}
+
+networks:
+  red_local:
+    driver: bridge
+    ipam:
+      config:
+          - subnet: 172.20.0.0/24
+            gateway: 172.20.0.1

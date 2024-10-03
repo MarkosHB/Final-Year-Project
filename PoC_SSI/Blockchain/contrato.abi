@@ -1,0 +1,39 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "did",
+                "type": "string"
+            }
+        ],
+        "name": "obtenerHashCredencial",
+        "outputs": [
+            {
+                "internalType": "bytes32",
+                "name": "",
+                "type": "bytes32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "did",
+                "type": "string"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "hashCredencial",
+                "type": "bytes32"
+            }
+        ],
+        "name": "registrarCredencial",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]

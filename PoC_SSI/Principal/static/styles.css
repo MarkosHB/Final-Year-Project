@@ -1,0 +1,79 @@
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        h3 {
+            margin: 0;
+            font-size: 18px;
+            display: inline-block;
+            color: #555555;
+        }
+
+        .contenedor {
+            text-align: center;
+            background-color: #fff;
+            padding: 100px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contenedor-paso {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+         .contenedor-mensaje {
+            padding: 30px;
+            background-color: #e0e4e8;
+            border: 1px solid #c0bbbb;
+            border-radius: 5px;
+            color: #003366;
+            min-width: 300px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .boton-general {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #0370a9;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .boton-general:hover {
+            background-color: #025b8c;
+        }
+
+        .boton-atras {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #b01d1d;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .boton-atras:hover {
+            background-color: #8d1111;
+        }

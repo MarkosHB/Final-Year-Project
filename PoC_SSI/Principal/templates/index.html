@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="contenedor">
+        <h1>Bienvenido a la Prueba de Concepto elaborada para el TFG de Identidad Autosoberana</h1>
+        <img src="{{ url_for('static', filename='ActoresSSI.png') }}" alt="Actores SSI">
+        <h2>Seleccione el flujo de acciones deseado (consultar en la memoria)</h2>
+        <form method="post" action="/">
+            <button class="boton-general" type="submit" name="modo" value="A">Prueba de Concepto A</button>
+            <button class="boton-general" type="submit" name="modo" value="B">Prueba de Concepto B</button>
+        </form>
+    </div>
+</body>
+
+</html>
