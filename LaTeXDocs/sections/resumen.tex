@@ -1,0 +1,58 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+%% begin abstract format
+\makeatletter
+\renewenvironment{abstract}{%
+    \if@twocolumn
+      \section*{Resumen \\}%
+    \else %% <- here I've removed \small
+    \begin{flushright}
+        {\filleft\Huge\bfseries\fontsize{48pt}{12}\selectfont Resumen\vspace{\z@}}%  %% <- here I've added the format
+        \end{flushright}
+      \quotation
+    \fi}
+    {\if@twocolumn\else\endquotation\fi}
+\makeatother
+%% end abstract format
+%% begin abstract format
+\makeatletter
+\renewenvironment{abstract}{%
+    \if@twocolumn
+      \section*{Resumen \\}%
+    \else %% <- here I've removed \small
+    \begin{flushright}
+        {\filleft\Huge\bfseries\fontsize{48pt}{12}\selectfont Resumen\vspace{\z@}}%  %% <- here I've added the format
+        \end{flushright}
+      \quotation
+    \fi}
+    {\if@twocolumn\else\endquotation\fi}
+\makeatother
+%% end abstract format
+
+% --------------
+\begin{abstract}
+La \acrlong{SSI} plantea una nueva alternativa a la gestión de las credenciales que permiten identificar a sus participantes en entornos digitales. Para ello se basa en determinados mecanismos técnicos que garantizan la seguridad criptográfica, en innovadoras tecnologías descentralizadoras fomentando así la transparencia en el sistema y en crear un ecosistema donde cada actor puede efectuar sus funciones de manera autónoma e independiente.
+\\
+
+Mediante este \acrshort{TFG} se pretende ofrecer unas correctas y actualizadas definiciones de dichos aspectos, las cuales servirán para elaborar un profundo análisis de aplicabilidad del paradigma en un entorno de \acrlong{DT}. Además, se introducirá el plan de progresiva implantación del mismo a la sociedad europea con la \acrlong{eIDAS}, se realizará una comparativa con otros entornos como el del \acrlong{IoT} y se desarrollará una prueba de concepto que ilustrará el funcionamiento de la tecnología desde un enfoque práctico.
+\\
+
+Finalmente, se presentarán a modo de conclusión un conjunto de reflexiones personales fruto de la labor de investigación, donde también se expondrán nuevas ideas y valoraciones que complementarán el análisis llevado a cabo.  
+\\
+
+\bfseries{\large{Listado de palabras clave:}} 
+\begin{itemize}
+    \item Identidad Autosoberana.
+    \item Gemelos Digitales.
+    \item Blockchain.
+    \item Identidad Digital Europea.
+    \item Internet de las Cosas.
+\end{itemize}
+
+\end{abstract}
+
+\end{document}
+
+

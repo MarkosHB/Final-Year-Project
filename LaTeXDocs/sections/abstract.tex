@@ -1,0 +1,41 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+%% begin abstract format
+\makeatletter
+\renewenvironment{abstract}{%
+    \if@twocolumn
+      \section*{Abstract \\}%
+    \else %% <- here I've removed \small
+    \begin{flushright}
+        {\filleft\Huge\bfseries\fontsize{48pt}{12}\selectfont Abstract\vspace{\z@}}%  %% <- here I've added the format
+        \end{flushright}
+      \quotation
+    \fi}
+    {\if@twocolumn\else\endquotation\fi}
+\makeatother
+%% end abstract format
+
+% --------------
+\begin{abstract}
+The Self-Sovereign Identity presents a new alternative for managing credentials that allow the identification of its participants in digital environments. To do so, it relies on certain technical mechanisms to ensure cryptographic security, innovative decentralizing technologies that promote transparency in the system, and the creation of an ecosystem where each actor can perform their functions in a autonomous and independent way.
+\\
+
+This Bachelor Thesis aims to offer correct and updated definitions of these aspects, which will be used to develop a deep analysis of the paradigm's applicability in a Digital Twins environment. Additionally, we will introduce the plan for its progressive implementation in the european society through the European Digital Identity, a comparison with other environments such as the IoT, and a proof of concept will be developed for illustrating the technology funcionalities with a practical approach.
+\\
+
+Finally, a set of personal reflections resulting from the research work will be presented as a general conclusion, including new ideas and valorations that will complement the analysis.
+\\
+
+\bfseries{\large{Keywords:}} 
+\begin{itemize}
+    \item Self-Sovereign Identity.
+    \item Digital Twins.
+    \item Blockchain.
+    \item European Digital Identity.
+    \item Internet of Things.
+\end{itemize}
+
+\end{abstract}
+
+\end{document}

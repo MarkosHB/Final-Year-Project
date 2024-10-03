@@ -1,0 +1,81 @@
+\documentclass[12pt, a4paper, twoside]{article}
+
+%% Preamble
+\usepackage{umatfgspanish}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{blindtext}
+\usepackage{wrapfig}
+\usepackage{csquotes}
+\usepackage[style=numeric, sorting=nyt, backend=biber]{biblatex}
+\usepackage[toc, acronym]{glossaries}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\graphicspath{{images/}{../images/}}
+\addbibresource{references/bibliografia.bib}
+\subfile{references/acronimos}
+\subfile{references/glosario}
+
+\newcounter{observacion}
+\newcounter{analisis}
+
+
+\begin{document}
+
+%% Cover
+\includepdf[noautoscale=true, width=\paperwidth]{covers/cover.pdf}
+
+%% Title
+\clearpage
+\setcounter{page}{1}
+
+\includepdf[noautoscale=true, width=\paperwidth]{covers/title.pdf}
+\newpage
+
+%% Abstract
+\subfile{sections/resumen}
+\newpage
+
+\subfile{sections/abstract}
+\newpage
+
+%% Index
+\tableofcontents
+
+%% Sections
+\section{Introducción}\label{Introducción}
+\subfile{sections/introduccion}
+
+\section{Estado del arte}\label{Estado del arte}
+\subfile{sections/EstadoDelArte}
+
+\section{Aplicabilidad de la Identidad Autosoberana}\label{Aplicabilidad de la Identidad Autosoberana}
+\subfile{sections/AplicabilidadIdentidadAutosoberana}
+
+\section{Conclusiones}\label{Conclusiones}
+\subfile{sections/conclusiones}
+
+%% Bibliography
+\printbibliography[heading=bibintoc]{}
+\newpage
+
+%% Glosary
+\printglossary[title=Glosario, toctitle=Glosario de términos]
+\newpage
+
+%% Acronyms
+\printglossary[type=\acronymtype,title=Acrónimos,toctitle=Listado de acrónimos]
+\newpage
+
+%% Apendices
+\begin{umaappendices}
+    \section{Configuración de la prueba de concepto.}\label{Configuración de la prueba de concepto}
+    \subfile{sections/ConfigPoC}
+\end{umaappendices}
+
+%% Back Cover
+\includepdf[noautoscale=true, width=\paperwidth]{covers/backcover.pdf}
+
+\end{document}
