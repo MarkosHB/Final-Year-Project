@@ -1,4 +1,4 @@
-# Self-Sovereign Identity as a decentralized solution to the custody of private credentials.
+# Final-Year-Project: Self-Sovereign Identity as a decentralized solution to the custody of private credentials.
 
 This project focuses on developing a Proof of Concept (PoC) for Self-Sovereign Identity (SSI), wich is a digital identity model that allows individuals to own, control, and manage their identities independently without relying on centralized authorities. It provides a secure, privacy-enhanced identity framework that can be used across multiple contexts and areas. This repository is divided as it follows:
 
